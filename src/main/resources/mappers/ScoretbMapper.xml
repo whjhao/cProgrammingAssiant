@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.whjbatisgenerate.whj_batis_generate.dao.ScoretbMapper">
+  <resultMap id="BaseResultMap" type="com.whjbatisgenerate.whj_batis_generate.entity.Scoretb">
+    <id column="stuid" jdbcType="INTEGER" property="stuid" />
+    <id column="testid" jdbcType="INTEGER" property="testid" />
+    <result column="score" jdbcType="INTEGER" property="score" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="map">
+    delete from scoretb
+    where stuid = #{stuid,jdbcType=INTEGER}
+      and testid = #{testid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.whjbatisgenerate.whj_batis_generate.entity.Scoretb">
+    insert into scoretb (stuid, testid, score
+      )
+    values (#{stuid,jdbcType=INTEGER}, #{testid,jdbcType=INTEGER}, #{score,jdbcType=INTEGER}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.whjbatisgenerate.whj_batis_generate.entity.Scoretb">
+    update scoretb
+    set score = #{score,jdbcType=INTEGER}
+    where stuid = #{stuid,jdbcType=INTEGER}
+      and testid = #{testid,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="map" resultMap="BaseResultMap">
+    select stuid, testid, score
+    from scoretb
+    where stuid = #{stuid,jdbcType=INTEGER}
+      and testid = #{testid,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select stuid, testid, score
+    from scoretb
+  </select>
+</mapper>
