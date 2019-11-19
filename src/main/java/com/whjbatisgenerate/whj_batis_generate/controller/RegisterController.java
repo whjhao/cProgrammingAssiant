@@ -2,6 +2,7 @@ package com.whjbatisgenerate.whj_batis_generate.controller;
 
 import com.whjbatisgenerate.whj_batis_generate.entity.Stuser;
 import com.whjbatisgenerate.whj_batis_generate.service.impl.StudengtAllServiceImpl;
+import com.whjbatisgenerate.whj_batis_generate.service.StudentAllService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class RegisterController {
 
     @Autowired
-    StudengtAllServiceImpl studengtAllService;
+    StudentAllService studengtAllService;
     @RequestMapping("/register")
     public String RegisterNewStu(){
         return "registerdata";
